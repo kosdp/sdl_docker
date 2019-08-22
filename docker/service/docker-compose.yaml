@@ -1,0 +1,34 @@
+version: '2'
+services:
+  sdl_core:
+    image: 'sdl_core_ready:latest'
+    command: /bin/sh -c "cd bin && ./start.sh"
+    ports:
+      - "8087:8087"
+      - "8090:8090"
+      - "12345:12345"
+    volumes: 
+      - build:/opt/sdl_core
+      - src:/opt/src
+
+  sdl_hmi:
+    image: 'sdl_hmi:latest'
+    command: 'python -m http.server 3000'
+    ports:
+      - '3000:3000'
+      - '8088:8088'
+      - '8089:8089'
+      - '8081:8081'
+      - '2468:2468'
+
+volumes:
+  build:
+    driver_opts:
+      type: none
+      device: /home/=replace=/starter/builds/sdl_core
+      o: bind
+  src:
+    driver_opts:
+      type: none
+      device: /home/=replace=/starter/git/sdl/sdl_core
+      o: bind
