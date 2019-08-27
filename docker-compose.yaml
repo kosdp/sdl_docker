@@ -11,4 +11,4 @@ services:
   generic_hmi:
     image: 'generic_hmi:latest'
     ports:
-      - '3000:3000'
+      - '3000:80'
