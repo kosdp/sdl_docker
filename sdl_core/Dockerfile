@@ -9,7 +9,6 @@ RUN apt-get update \
     build-essential \
     libavahi-client-dev \
     libsqlite3-dev \
-    #chromium-browser \
     libssl1.0-dev \
     libudev-dev \
     libgtest-dev \
@@ -25,7 +24,7 @@ RUN mkdir -p /opt/sdl \
     && cd /opt/sdl \
     && git clone https://github.com/smartdevicelink/sdl_core.git
 
-COPY ./sdl_preloaded_pt.json /opt/sdl/sdl_core/src/appMain/
+COPY ./sdl_preloaded_pt.json.new /opt/sdl/sdl_core/src/appMain/sdl_preloaded_pt.json
 
 RUN mkdir -p /opt/sdl/build \
     && cd /opt/sdl/build \
