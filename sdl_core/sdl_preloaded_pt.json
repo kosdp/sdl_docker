@@ -2533,7 +2533,7 @@
                 "RequestType": [],
                 "RequestSubType": [],
                 "hybrid_app_preference": "CLOUD",
-                "endpoint": "wss://localhost:5432",
+                "endpoint": "ws://localhost:5432",
                 "enabled": true,
                 "auth_token": "",
                 "cloud_transport_type": "WS",

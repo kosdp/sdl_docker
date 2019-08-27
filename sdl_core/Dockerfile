@@ -29,11 +29,13 @@ COPY ./sdl_preloaded_pt.json /opt/sdl/sdl_core/src/appMain/
 
 RUN mkdir -p /opt/sdl/build \
     && cd /opt/sdl/build \
+    && sed -i 's/127\.0\.0\.1/0\.0\.0\.0/g' /opt/sdl/sdl_core/src/appMain/smartDeviceLink.ini \
     && cmake /opt/sdl/sdl_core \
     && make \
     && make install \
     && make clean \
     && mv /opt/sdl/build/bin /opt/sdl \
+    && cd /opt/sdl/bin \
     && rm -r /opt/sdl/sdl_core \
     && rm -r /opt/sdl/build \
     && ldconfig
