@@ -16,6 +16,7 @@ services:
     image: 'generic_hmi:latest'
     ports:
       - '3000:3000'
+      - '4000:4000'
     volumes:
       - sdl_core_bin:/opt/sdl/bin
 
