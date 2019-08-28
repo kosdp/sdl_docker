@@ -6,9 +6,9 @@ sdl_core/sdl_preloaded_pt.json contains in the end section to describe connectio
 
 Example usage:
 
-starter$ ./starter.sh   # start sdl_core and generic_hmi
+sdl_docker$ ./build.sh   # start sdl_core and generic_hmi
 
-starter$ ./starter.sh stop   # stop sdl_core and generic_hmi
+sdl_docker$ ./build.sh stop   # stop sdl_core and generic_hmi
 
 https://github.com/smartdevicelink/generic_hmi available at port 3000
 
