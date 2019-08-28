@@ -20,5 +20,10 @@ services:
     volumes:
       - sdl_core_bin:/opt/sdl/bin
 
+  sdl_atf:
+    image: 'sdl_atf:latest'
+    volumes:
+      - sdl_core_bin:/opt/sdl/bin
+
 volumes:
   sdl_core_bin:
