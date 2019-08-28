@@ -1,5 +1,7 @@
 version: '2'
+
 services:
+
   sdl_core:
     image: 'sdl_core:latest'
     ports:
@@ -7,8 +9,15 @@ services:
       - "8087:8087"
       - "8090:8090"
       - "12345:12345"
+    volumes:
+      - sdl_core_bin:/opt/sdl/bin
 
   generic_hmi:
     image: 'generic_hmi:latest'
     ports:
-      - '3000:80'
+      - '3000:3000'
+    volumes:
+      - sdl_core_bin:/opt/sdl/bin
+
+volumes:
+  sdl_core_bin:
