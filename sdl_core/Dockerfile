@@ -41,6 +41,6 @@ RUN mkdir -p /opt/sdl/build \
 
 WORKDIR /opt/sdl/bin
 
-EXPOSE 3001 8080 8087 12345
+EXPOSE 3001 8087 8090 12345
 
 CMD /opt/sdl/bin/start.sh
