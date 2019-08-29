@@ -13,3 +13,9 @@ sdl_docker$ ./build.sh stop   # stop sdl_core and generic_hmi
 https://github.com/smartdevicelink/generic_hmi available at port 3000
 
 https://github.com/smartdevicelink/sdl_hmi available at port 4000
+
+Also there is separate image for https://github.com/smartdevicelink/sdl_atf and  https://github.com/smartdevicelink/sdl_atf_test_scripts
+
+Run tests in sdl_atf
+
+docker-compose run sdl_atf /opt/sdl/sdl_atf/start.sh test_scripts/Smoke/API/021_Speak_PositiveCase_SUCCESS.lua

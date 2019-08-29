@@ -13,6 +13,7 @@ RUN apt-get update \
     qt5-default \
     qt5-qmake \
     libqt5websockets5-dev \
+    net-tools \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -24,6 +25,10 @@ RUN git clone https://github.com/smartdevicelink/sdl_atf.git . \
     && git submodule init \
     && git submodule update \
     && make \
-    && git clone https://github.com/smartdevicelink/sdl_atf_test_scripts.git scripts
+    && git clone https://github.com/smartdevicelink/sdl_atf_test_scripts.git /opt/sdl/sdl_atf_test_scripts \
+    && cp -r /opt/sdl/sdl_atf_test_scripts/* ./ \
+    && rm -r /opt/sdl/sdl_atf_test_scripts
+
+COPY config.lua /opt/sdl/sdl_atf/modules
 
 CMD /opt/sdl/sdl_atf/start.sh

@@ -4,6 +4,7 @@ services:
 
   sdl_core:
     image: 'sdl_core:latest'
+    build: 'sdl_core'
     ports:
       - "3001:3001"
       - "8087:8087"
@@ -14,6 +15,7 @@ services:
 
   generic_hmi:
     image: 'generic_hmi:latest'
+    build: 'generic_hmi'
     ports:
       - '3000:3000'
       - '4000:4000'
@@ -22,6 +24,7 @@ services:
 
   sdl_atf:
     image: 'sdl_atf:latest'
+    build: 'sdl_atf'
     volumes:
       - sdl_core_bin:/opt/sdl/bin
 
